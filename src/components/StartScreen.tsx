@@ -1,5 +1,7 @@
+import type { GameMode } from '../types';
+
 interface StartScreenProps {
-  onStart: () => void;
+  onStart: (mode: GameMode) => void;
 }
 
 export function StartScreen({ onStart }: StartScreenProps) {
@@ -64,21 +66,38 @@ export function StartScreen({ onStart }: StartScreenProps) {
           </ul>
         </div>
 
-        <button
-          onClick={onStart}
-          className="w-full font-bold py-4 px-8 text-lg transition-all duration-300 active:scale-95 tracking-wider"
-          style={{
-            fontFamily: 'Orbitron, monospace',
-            background: 'linear-gradient(135deg, var(--color-neon-cyan), var(--color-neon-blue))',
-            color: 'var(--color-bg-dark)',
-            borderRadius: '4px',
-            boxShadow: '0 0 20px var(--color-neon-cyan), 0 0 40px var(--color-neon-blue), inset 0 0 20px rgba(255, 255, 255, 0.2)',
-            border: '1px solid var(--color-neon-cyan)',
-            animation: 'pulse-glow 2s ease-in-out infinite'
-          }}
-        >
-          START GAME
-        </button>
+        <div className="space-y-3">
+          <button
+            onClick={() => onStart('bingo')}
+            className="w-full font-bold py-4 px-8 text-lg transition-all duration-300 active:scale-95 tracking-wider"
+            style={{
+              fontFamily: 'Orbitron, monospace',
+              background: 'linear-gradient(135deg, var(--color-neon-cyan), var(--color-neon-blue))',
+              color: 'var(--color-bg-dark)',
+              borderRadius: '4px',
+              boxShadow: '0 0 20px var(--color-neon-cyan), 0 0 40px var(--color-neon-blue), inset 0 0 20px rgba(255, 255, 255, 0.2)',
+              border: '1px solid var(--color-neon-cyan)',
+              animation: 'pulse-glow 2s ease-in-out infinite'
+            }}
+          >
+            BINGO BOARD
+          </button>
+
+          <button
+            onClick={() => onStart('card-deck')}
+            className="w-full font-bold py-4 px-8 text-lg transition-all duration-300 active:scale-95 tracking-wider"
+            style={{
+              fontFamily: 'Orbitron, monospace',
+              background: 'linear-gradient(135deg, var(--color-neon-magenta), var(--color-neon-purple))',
+              color: 'var(--color-bg-dark)',
+              borderRadius: '4px',
+              boxShadow: '0 0 20px var(--color-neon-magenta), 0 0 40px var(--color-neon-purple), inset 0 0 20px rgba(255, 255, 255, 0.2)',
+              border: '1px solid var(--color-neon-magenta)'
+            }}
+          >
+            CARD DECK SHUFFLE
+          </button>
+        </div>
       </div>
     </div>
   );

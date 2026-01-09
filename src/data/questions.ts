@@ -38,8 +38,8 @@ export const questions: string[] = [
   "can do rock-paper-scissors best 2 out of 3 (you must play!)",
   "will share an interesting fact about their hometown",
   "can demonstrate a 5-second party trick",
-];
 
+  // Creative interests
   "has a Spotify playlist over 100 songs",
   "can draw or sketch from memory",
   "owns art supplies they haven't used yet",

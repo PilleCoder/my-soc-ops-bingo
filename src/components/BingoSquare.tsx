@@ -35,13 +35,6 @@ export function BingoSquare({ square, isWinning, onClick }: BingoSquareProps) {
     };
   };
 
-  const hoverStyle = !square.isMarked && !square.isFreeSpace ? {
-    ':hover': {
-      borderColor: 'var(--color-neon-cyan)',
-      boxShadow: '0 0 10px var(--color-neon-cyan)',
-    }
-  } : {};
-
   const freeSpaceClasses = square.isFreeSpace ? 'font-bold text-sm' : '';
 
   return (
