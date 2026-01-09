@@ -108,8 +108,8 @@ function loadGameState(): Pick<BingoGameState, 'gameState' | 'board' | 'winningL
       console.warn('Invalid game state data in localStorage, clearing...');
       localStorage.removeItem(STORAGE_KEY);
     }
-  } catch (error) {
-    console.warn('Failed to load game state:', error);
+  } catch (_error) {
+    console.warn('Failed to load game state');
     if (typeof window !== 'undefined') {
       localStorage.removeItem(STORAGE_KEY);
     }
@@ -132,8 +132,8 @@ function saveGameState(gameState: GameState, board: BingoSquareData[], winningLi
       winningLine,
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-  } catch (error) {
-    console.warn('Failed to save game state:', error);
+  } catch (_error) {
+    console.warn('Failed to save game state');
   }
 }
 
